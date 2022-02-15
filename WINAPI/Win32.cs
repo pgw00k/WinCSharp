@@ -34,9 +34,19 @@ namespace WINAPI
         public static extern IntPtr SendMessage(IntPtr hWnd, WinMsg msg, IntPtr wParam, IntPtr lParam);
 
         [DllImport("User32.dll", CharSet = CharSet.Auto)]
+        public static extern IntPtr PostMessage(IntPtr hWnd, WinMsg msg, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("User32.dll", CharSet = CharSet.Auto)]
         public static extern int mouse_event(int dwFlags, int dx, int dy, int cButtons, int dwExtraInfo);
 
         #endregion
+
+        public static Rect GetWindowRect(IntPtr hWnd)
+        {
+            Rect r = new Rect();
+            GetWindowRect(hWnd, ref r);
+            return r;
+        }
 
     }
 }
