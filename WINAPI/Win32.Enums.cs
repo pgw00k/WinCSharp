@@ -1,4 +1,10 @@
-﻿using System;
+﻿/*
+ * 
+ * 主要是定义在 Winuser.h 中的常量
+ * 
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +12,7 @@ using System.Threading.Tasks;
 
 namespace WINAPI
 {
+
 	#region Windows Messages
 	public enum WinMsg
 	{
@@ -209,6 +216,13 @@ namespace WINAPI
 		WM_APP = 0x8000,
 		WM_USER = 0x0400,
 		WM_REFLECT = WM_USER + 0x1c00
+	}
+	#endregion
+
+	#region Windows Hook
+	public enum WinHook
+	{
+		WH_KEYBOARD_LL = 13,
 	}
 	#endregion
 }
